@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 17:21:12 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/05 19:28:30 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/06 08:58:16 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/18 18:36:32 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int			ft_tolower(int c)
+int		ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c - 'A' + 'a');
+	if ((c >= 'A') && (c <= 'Z'))
+		return (c + 32);
 	else
 		return (c);
 }

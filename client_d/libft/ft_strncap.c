@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncapitalize.c                                :+:      :+:    :+:   */
+/*   ft_strncap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 09:43:22 by getrembl          #+#    #+#             */
-/*   Updated: 2015/05/19 09:50:21 by getrembl         ###   ########.fr       */
+/*   Updated: 2015/05/28 11:34:27 by getrembl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strncapitalize(char *str, size_t n)
+char			*ft_strncap(char *str, size_t n)
 {
 	size_t		i;
 

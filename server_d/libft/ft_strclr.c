@@ -3,16 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/15 14:40:43 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/27 17:03:15 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/10 20:15:28 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/12 10:12:12 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_strclr(char *s)
+#include "libft.h"
+
+void	ft_strclr(char *s)
 {
+	int i;
+
 	if (s)
-		while (*s)
-			*s++ = '\0';
+	{
+		i = ft_strlen(s) - 1;
+		while (i >= 0)
+		{
+			s[i] = '\0';
+			i--;
+		}
+	}
 }

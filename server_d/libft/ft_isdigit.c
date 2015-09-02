@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 20:47:06 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/07 18:34:51 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/06 08:35:30 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/18 18:31:29 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isdigit(int c)
 {
-	return ((c >= 48) && (c <= 57));
+	if ((c >= '0') && (c <= '9'))
+		return (1);
+	else
+		return (0);
 }

@@ -6,12 +6,14 @@
 #    By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/06/04 10:34:39 by sdurr             #+#    #+#              #
-#    Updated: 2015/08/24 14:16:10 by karakhirn        ###   ########.fr        #
+#    Updated: 2015/09/02 09:11:11 by sdurr            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME		= client
 SRC			= client.c \
+				ft_put.c \
+				ft_get.c \
 
 OBJ			= $(SRC:.c=.o)
 

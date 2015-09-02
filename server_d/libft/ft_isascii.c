@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 20:29:45 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/05 20:38:58 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/04 18:10:28 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/18 18:31:17 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isascii(int c)
 {
-	return (c >= 0 && c <= 127);
+	if (c > -1 && c < 128)
+	{
+		return (1);
+	}
+	else
+		return (0);
 }

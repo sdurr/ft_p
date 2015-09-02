@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 15:51:52 by getrembl          #+#    #+#             */
-/*   Updated: 2014/12/01 16:19:54 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/04 19:08:53 by sdurr             #+#    #+#             */
+/*   Updated: 2014/12/01 11:25:49 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int			ft_strcmp(const char *s1, const char *s2)
+#include <string.h>
+
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	while (*s1 != '\0' && *s1 == *s2)
+	while ((*s1 != '\0' && *s1 == *s2))
 	{
-		if (*s1 == 0)
-			return (0);
 		s1++;
 		s2++;
 	}

@@ -3,28 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/11 15:12:59 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/24 10:37:41 by sdurr            ###   ########.fr       */
+/*   Created: 2014/11/07 16:57:24 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/28 11:39:28 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-int						ft_memcmp(const void *s1, const void *s2, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char	*s1_bkp;
-	const unsigned char	*s2_bkp;
+	const unsigned char *r1;
+	const unsigned char *r2;
 
-	s1_bkp = s1;
-	s2_bkp = s2;
-	while (n-- && s1 && s2)
+	if (s1 != NULL && s2 != NULL)
 	{
-		if (*s1_bkp != *s2_bkp)
-			return ((int)*s1_bkp - (int)*s2_bkp);
-		s1_bkp++;
-		s2_bkp++;
+		r1 = s1;
+		r2 = s2;
+		while (n != 0)
+		{
+			if (*r1 != *r2)
+				return ((int)*r1 - (int)*r2);
+			r1++;
+			r2++;
+			n--;
+		}
 	}
 	return (0);
 }

@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memove.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 12:25:32 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/24 10:50:18 by sdurr            ###   ########.fr       */
+/*   Created: 2014/11/07 13:40:36 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/28 11:40:19 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <string.h>
 
-void			*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char		*dst_bkp;
-	const char	*src_bkp;
+	char		*ret;
+	const char	*srcs;
 
-	dst_bkp = (char *)dst;
-	src_bkp = (char *)src;
-	if (dst && src)
+	ret = dst;
+	srcs = src;
+	if (dst != NULL && src != NULL)
 	{
-		if (dst_bkp < src_bkp)
+		if (ret < srcs)
 		{
 			while (len--)
-				*dst_bkp++ = *src_bkp++;
+				*ret++ = *srcs++;
 			return (dst);
 		}
 		else
 		{
-			dst_bkp += len - 1;
-			src_bkp += len - 1;
+			srcs += len - 1;
+			ret += len - 1;
 			while (len--)
-				*dst_bkp-- = *src_bkp--;
+				*ret-- = *srcs--;
 			return (dst);
 		}
 	}

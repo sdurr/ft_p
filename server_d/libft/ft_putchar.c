@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 17:41:39 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/27 17:00:18 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/03 11:56:02 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/28 11:41:16 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void		ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write (1, &c, 1);
 }

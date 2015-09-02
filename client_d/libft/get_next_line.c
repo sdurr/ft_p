@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/28 17:48:43 by getrembl          #+#    #+#             */
-/*   Updated: 2015/03/04 18:23:53 by getrembl         ###   ########.fr       */
+/*   Created: 2015/06/09 17:42:01 by sdurr             #+#    #+#             */
+/*   Updated: 2015/06/09 17:42:02 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
+#include <unistd.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <stdio.h>
 
 static int			bufatbackn(char **line, char **bkp, char **buffer, int *i)
 {

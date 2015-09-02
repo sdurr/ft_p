@@ -3,17 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/07 15:18:51 by getrembl          #+#    #+#             */
-/*   Updated: 2015/05/18 16:12:35 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/04 12:06:20 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/28 11:44:40 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <string.h>
 
-char	*ft_strcat(char *s1, const char *s2)
+char		*ft_strcat(char *s1, const char *s2)
 {
-	ft_strcpy(&s1[ft_strlen(s1)], s2);
-	return (s1);
+	int i;
+
+	i = 0;
+	if (s1 != NULL || s2 != NULL)
+	{
+		while (s1[i] != '\0')
+			i++;
+		if (*s2 != '\0')
+		{
+			while (*s2 != '\0')
+			{
+				s1[i] = *s2;
+				s2++;
+				i++;
+			}
+		}
+		else
+			s1[i] = '\0';
+		return (s1);
+	}
+	return (NULL);
 }

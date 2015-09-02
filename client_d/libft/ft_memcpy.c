@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/09 17:49:02 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/24 22:06:03 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/07 12:23:27 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/28 11:39:43 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-void			*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char		*dst_bkp;
-	const char	*src_bkp;
-	size_t		i;
+	char		*ret;
+	const char	*srcs;
+	int			i;
 
+	i = 0;
 	if (dst || src)
 	{
-		dst_bkp = dst;
-		src_bkp = src;
-		i = 0;
-		while (n--)
+		ret = dst;
+		srcs = src;
+		while (n != 0)
 		{
-			dst_bkp[i++] = *src_bkp++;
+			ret[i] = srcs[i];
+			i++;
+			n--;
 		}
-		dst_bkp[i] = '\0';
-		return (dst);
 	}
-	return (NULL);
+	return (ret);
 }

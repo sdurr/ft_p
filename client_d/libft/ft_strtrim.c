@@ -3,41 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/17 11:48:13 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/27 17:33:06 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/11 10:03:04 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/28 11:56:34 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+#include <string.h>
 
-char			*ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s)
 {
-	char		*strtrim;
-	size_t		i;
-	size_t		i_bis;
-	size_t		i_ter;
+	char	*r;
+	int		i;
+	int		d;
 
-	if (!s)
-		return (NULL);
-	if (s[0] == '\0')
-		return ((char *)s);
 	i = 0;
-	i_bis = ft_strlen (s) - 1;
-	i_ter = 0;
-	if (!(strtrim = (char *)malloc(sizeof(char) * i_bis)))
+	d = 0;
+	if (s == NULL)
 		return (NULL);
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+	if (!(r = (char *)malloc(sizeof(char*) * ft_strlen(s))))
+		return (NULL);
+	while ((s[i] == ' ') || (s[i] == ',') || (s[i] == '\n') || (s[i] == '\t'))
 		i++;
-	if (s[i] != ' ' && s[i] != '\t' && s[i] != '\n')
-		while (i <= i_bis)
-		{
-			while (s[i_bis] == ' ' || s[i_bis] == '\t' || s[i_bis] == '\n')
-				i_bis--;
-			strtrim[i_ter++] = s[i++];
-		}
-	strtrim[i_ter] = '\0';
-	return (strtrim);
+	while (s[i] != '\0')
+		r[d++] = s[i++];
+	i = ft_strlen(r) - 1;
+	while ((r[i] == ' ') || (r[i] == ',') || (r[i] == '\n') || (r[i] == '\t'))
+		i--;
+	r[i + 1] = '\0';
+	return (r);
 }

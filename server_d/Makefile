@@ -6,12 +6,18 @@
 #    By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/06/04 10:34:39 by sdurr             #+#    #+#              #
-#    Updated: 2015/08/24 14:17:31 by karakhirn        ###   ########.fr        #
+#    Updated: 2015/09/02 11:05:27 by sdurr            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME		= server
+
 SRC			= server.c \
+				ft_put.c \
+				ft_get.c \
+				ft_cd.c \
+				ft_ls.c \
+				quit.c \
 
 OBJ			= $(SRC:.c=.o)
 

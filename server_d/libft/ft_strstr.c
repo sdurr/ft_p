@@ -3,27 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/13 17:29:04 by getrembl          #+#    #+#             */
-/*   Updated: 2014/12/03 21:50:52 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/04 16:06:30 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/28 11:55:35 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <string.h>
 
-char			*ft_strstr(const char *s1, const char *s2)
+char	*ft_strstr(const char *s1, const char *s2)
 {
-	const char	*s1_bkp;
+	int i;
+	int j;
+	int c;
 
-	s1_bkp = s1;
-	if (!*s2)
-		return ((char *)s1_bkp);
-	while (*s1_bkp)
+	j = 0;
+	i = 0;
+	if (s1[i] == '\0' || s2[j] == '\0')
+		return ((char*)&s1[i]);
+	while (s1[i] != '\0')
 	{
-		if (ft_memcmp (s1_bkp, s2, ft_strlen(s2)) == 0)
-			return ((char *)s1_bkp);
-		s1_bkp++;
+		c = i;
+		j = 0;
+		while (s1[i] == s2[j])
+		{
+			i++;
+			j++;
+			if (s2[j] == '\0')
+				return ((char*)&s1[c]);
+		}
+		i = c;
+		i++;
 	}
 	return (NULL);
 }

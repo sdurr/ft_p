@@ -3,30 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/09 20:27:25 by getrembl          #+#    #+#             */
-/*   Updated: 2015/02/09 15:50:40 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/07 12:59:12 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/28 11:38:58 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-void					*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned char		*dst_bkp;
-	const unsigned char	*src_bkp;
-	int					i;
+	char		*ret;
+	const char	*srcs;
+	int			i;
 
-	dst_bkp = dst;
-	src_bkp = src;
 	i = 0;
-	while (n--)
+	ret = dst;
+	srcs = src;
+	if (src || dst)
 	{
-		dst_bkp[i] = src_bkp[i];
-		if (src_bkp[i] == (unsigned char)c)
-			return (&dst_bkp[i + 1]);
-		i++;
+		while (n != 0)
+		{
+			ret[i] = srcs[i];
+			if (srcs[i] == (char)c)
+				return (&ret[i + 1]);
+			i++;
+			n--;
+		}
 	}
 	return (NULL);
 }

@@ -3,16 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/15 14:53:50 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/27 17:25:38 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/10 12:07:18 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/28 11:48:03 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_striter(char *s, void (*f)(char *))
+void	ft_striter(char *s, void (*f)(char *))
 {
-	if (s)
-		while (*s && f)
-			(*f)(s++);
+	int i;
+
+	i = 0;
+	if (s && f)
+	{
+		while (s[i] != '\0')
+		{
+			f((char*)&s[i]);
+			i++;
+		}
+	}
 }

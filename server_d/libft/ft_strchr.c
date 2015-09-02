@@ -3,22 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@42.fr>                  +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 12:42:40 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/24 21:56:23 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/04 17:29:26 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/28 11:45:06 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
+#include <stdlib.h>
 
-char		*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	while (*s != (char)c)
+	if (s)
 	{
-		if (*s == 0)
-			return (NULL);
-		s++;
+		while ((*s != (char)c) && (*s != '\0'))
+			s++;
+		if (*s == (char)c)
+			return ((char *)s);
 	}
-	return ((char *)s);
+	return (NULL);
 }

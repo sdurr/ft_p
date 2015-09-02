@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/28 17:49:58 by getrembl          #+#    #+#             */
-/*   Updated: 2015/03/24 20:36:22 by getrembl         ###   ########.fr       */
+/*   Created: 2015/06/09 17:42:13 by sdurr             #+#    #+#             */
+/*   Updated: 2015/06/09 17:42:13 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
-# include "libft.h"
+# include "libft/libft.h"
 
 int			get_next_line(int const fd, char **line);
 

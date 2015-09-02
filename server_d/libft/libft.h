@@ -3,20 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 16:46:43 by getrembl          #+#    #+#             */
-/*   Updated: 2015/05/19 09:50:32 by getrembl         ###   ########.fr       */
+/*   Created: 2015/06/09 17:42:19 by sdurr             #+#    #+#             */
+/*   Updated: 2015/06/09 17:42:19 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define BUFF_SIZE	32
+
 # include <string.h>
 
 char			**ft_mvtab(char **tab, int i);
 char			**ft_strsplit(char const *s, char c);
+char			**ft_tabdup(char const **tab);
 
 char			*ft_itoa(int n);
 char			*ft_strcat(char *s1, const char *s2);
@@ -26,7 +29,7 @@ char			*ft_strdup(char const *s1);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strmap(char const *s, char (*f)(char));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char			*ft_strncapitalize(char *str, size_t n);
+char			*ft_strncap(char *str, size_t n);
 char			*ft_strncat(char *s1, const char *s2, size_t n);
 char			*ft_strncpy(char *dst, const char *src, size_t n);
 char			*ft_strnew(size_t size);
@@ -51,6 +54,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+int				get_next_line(int const fd, char **line);
 
 size_t			ft_nwd(char const *str, char c);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);

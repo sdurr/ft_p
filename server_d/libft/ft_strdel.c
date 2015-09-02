@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/15 10:20:32 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/15 14:40:11 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/10 11:48:55 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/28 11:46:57 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void		ft_strdel(char **as)
+void	ft_strdel(char **as)
 {
 	if (as != NULL)
-		ft_memdel ((void **)as);
+		ft_memdel((void **)as);
 }

@@ -3,19 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: getrembl <getrembl@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/15 15:06:24 by getrembl          #+#    #+#             */
-/*   Updated: 2014/11/27 17:25:52 by getrembl         ###   ########.fr       */
+/*   Created: 2014/11/10 12:09:27 by sdurr             #+#    #+#             */
+/*   Updated: 2014/11/28 11:48:15 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void				ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int	i;
+	unsigned int i;
 
 	i = 0;
 	if (s && f)
-		while (s[++i])
-			(*f)(i, &s[i]);
+	{
+		while (s[i] != '\0')
+		{
+			f(i, &s[i]);
+			i++;
+		}
+	}
 }
