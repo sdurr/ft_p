@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/02 09:58:35 by sdurr             #+#    #+#             */
-/*   Updated: 2015/09/02 11:04:53 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/03 11:37:41 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 #include <dirent.h>
 #include <fcntl.h>
 
-void		ft_put(char *buf, int cs);
+int			ft_put(char *buf, int cs);
 void		ft_get(char *buf, int cs);
 void		ft_cd(char *buf, char *pwd, int cs);
 void		ft_ls(int cs);

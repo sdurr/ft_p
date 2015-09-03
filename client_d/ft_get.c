@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/02 09:11:38 by sdurr             #+#    #+#             */
-/*   Updated: 2015/09/02 09:28:13 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/03 10:26:17 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,6 @@ void	ft_get(char *buf, int sock)
 		write(ret, buf, r);
 	}
 	close(ret);
+	if (ret != -1)
+		ft_putstr("SUCCESS\n");
 }

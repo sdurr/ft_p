@@ -6,7 +6,7 @@
 /*   By: karakhirn <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/09 14:21:52 by karakhirn         #+#    #+#             */
-/*   Updated: 2015/09/02 11:06:30 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/03 11:38:46 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ static int		ft_while(int cs, int sock, char *pwd)
 		else if (ft_strncmp(buf, "get", 3) == 0)
 			ft_get(buf, cs);
 		else if (ft_strncmp(buf, "put", 3) == 0)
-			ft_put(buf, cs);
+		{
+			if (ft_put(buf, cs) == 1)
+				send(cs, "SUCCESS\n", 9, MSG_OOB);
+		}		
 		else if (buf[0])
 			send(cs, "ERROR Command not found\n", 25, MSG_OOB);
 		send(cs, "", 2, 0);
@@ -90,7 +93,7 @@ int				main(int ac, char **av)
 	sin.sin_addr.s_addr = htonl(INADDR_ANY);
 	if (bind(sock, (const struct sockaddr *)&sin, sizeof(sin)) == -1)
 	{
-		ft_putstr_fd("Bind error", 2);
+		ft_putstr_fd("Bind error\n", 2);
 		exit(2);
 	}
 	listen(sock, ft_atoi(av[1]));

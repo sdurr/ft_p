@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/02 09:57:12 by sdurr             #+#    #+#             */
-/*   Updated: 2015/09/02 10:56:16 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/03 09:43:31 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		ft_get(char *buf, int cs)
 			buf3[r] = 0;
 			send(cs, buf3, r + 1, MSG_OOB);
 		}
+		send(cs, "", 0, MSG_OOB);
 		close(ret);
-		send(cs, "SUCCESS\n", 9, MSG_OOB);
 	}
 }
