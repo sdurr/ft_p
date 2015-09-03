@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/02 09:09:23 by sdurr             #+#    #+#             */
-/*   Updated: 2015/09/03 12:01:50 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/03 14:35:09 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,9 @@ void	ft_put(char *buf, int sock)
 		while ((t = read(ret, buffer, 1023)) > 0)
 		{
 			buffer[t] = '\0';
-			ft_putnbr(t);
-			ft_putstr("\n");
 			write(sock, buffer, t);
 		}
 	}
 	close(ret);
-	write(sock, "", 1);
+//	write(sock, "", 1);
 }

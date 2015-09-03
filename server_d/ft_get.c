@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/02 09:57:12 by sdurr             #+#    #+#             */
-/*   Updated: 2015/09/03 09:43:31 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/03 13:54:43 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ void		ft_get(char *buf, int cs)
 	int		r;
 
 	tab = ft_strsplit(buf, ' ');
-	if ((ret = open(tab[1], O_RDONLY)) < 0)
-		send(cs, "ERROR File not exist\n", 27, MSG_OOB);
-	else
+	if ((ret = open(tab[1], O_RDONLY)) > 0)
 	{
 		while ((r = read(ret, buf3, 1023)) > 0)
 		{

@@ -6,7 +6,7 @@
 /*   By: karakhirn <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/09 14:21:52 by karakhirn         #+#    #+#             */
-/*   Updated: 2015/09/03 11:38:46 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/03 14:24:33 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,9 @@ static int		ft_while(int cs, int sock, char *pwd)
 			ft_get(buf, cs);
 		else if (ft_strncmp(buf, "put", 3) == 0)
 		{
-			if (ft_put(buf, cs) == 1)
-				send(cs, "SUCCESS\n", 9, MSG_OOB);
+			ft_put(buf, cs);
 		}		
-		else if (buf[0])
+		else if (buf[0] && ft_strncmp(buf, "put", 3) != 0)
 			send(cs, "ERROR Command not found\n", 25, MSG_OOB);
 		send(cs, "", 2, 0);
 	}

@@ -6,7 +6,7 @@
 /*   By: karakhirn <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/09 14:21:52 by karakhirn         #+#    #+#             */
-/*   Updated: 2015/09/02 09:26:05 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/03 14:37:34 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,10 @@ int					main(int ac, char **av)
 		if (ft_strcmp(buf, "quit") == 0)
 			break ;
 		if (ft_strncmp(buf, "put", 3) == 0)
+		{
+			test(sock);			
 			ft_put(buf, sock);
+		}	
 		else if (ft_strncmp(buf, "get", 3) == 0)
 			ft_get(buf, sock);
 		else
