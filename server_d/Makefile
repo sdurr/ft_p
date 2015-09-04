@@ -6,7 +6,7 @@
 #    By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/06/04 10:34:39 by sdurr             #+#    #+#              #
-#    Updated: 2015/09/02 11:05:27 by sdurr            ###   ########.fr        #
+#    Updated: 2015/09/04 12:05:31 by sdurr            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -33,12 +33,12 @@ $(NAME)	:		$(OBJ)
 				@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -L libft -lft
 
 clean	:
-				rm -rf $(OBJ)
+				@rm -rf $(OBJ)
 
 all		:		$(NAME)
 
 fclean	:		clean
-				rm -rf $(NAME)
+				@rm -rf $(NAME)
 
 re		:		fclean all
 

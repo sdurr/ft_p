@@ -6,7 +6,7 @@
 /*   By: karakhirn <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/09 14:21:52 by karakhirn         #+#    #+#             */
-/*   Updated: 2015/09/04 12:38:40 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/04 14:51:37 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ static void		ft_pwd(int cs)
 
 static int		ft_while(int cs, int sock, char *pwd)
 {
-	char		buf[1024];
+	char		*buf;
 	int			r;
 
 	while (1)
 	{
+		buf = ft_strnew(1024);
 		r = read(cs, buf, 1023);
-		buf[r - 1] = '\0';
 		if (ft_strcmp(buf, "quit") == 0)
 			ft_quit(sock, cs);
 		else if (ft_strcmp(buf, "pwd") == 0)
@@ -51,9 +51,9 @@ static int		ft_while(int cs, int sock, char *pwd)
 			ft_get(buf, cs);
 		else if (ft_strncmp(buf, "put", 3) == 0)
 			ft_put(buf, cs);
-		else if (buf[0])
-			send(cs, "ERROR Command not found\n", 25, MSG_OOB);
-		if (ft_strncmp(buf, "put", 3) != 0)
+		else if (buf[0] != '\0')
+			send(cs, "ERROR Command not found\n", 26, MSG_OOB);
+		if (ft_strncmp(buf, "put", 3))
 			send(cs, "", 2, 0);
 		buf[0] = '\0';
 	}

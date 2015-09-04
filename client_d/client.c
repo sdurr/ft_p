@@ -6,7 +6,7 @@
 /*   By: karakhirn <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/09 14:21:52 by karakhirn         #+#    #+#             */
-/*   Updated: 2015/09/04 12:43:26 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/04 15:38:16 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ static int			test(int sock)
 		buf[r] = 0;
 		if ((ft_strcmp(buf, "") == 0))
 			return (0);
-		if ((ft_strncmp(buf, "ERROR", 5) == 0))
+		if ((ft_strncmp(buf, "error", 5) == 0))
 		{
-			write(1, buf, r);
+			ft_putstr("ERROR This file already exist\n");
 			return (-1);
 		}
 		write(1, buf, r);
@@ -64,7 +64,7 @@ static int			test(int sock)
 int					main(int ac, char **av)
 {
 	int		sock;
-	char	buf[1023];
+	char	buf[1024];
 	int		r;
 
 	if (ac != 3)
@@ -72,6 +72,7 @@ int					main(int ac, char **av)
 	sock = ft_create_client(av[1], ft_atoi(av[2]));
 	while (1)
 	{
+		ft_bzero(buf, 1024);
 		write(1, "$> ", 3);
 		r = read(0, buf, 1023);
 		buf[r - 1] = 0;

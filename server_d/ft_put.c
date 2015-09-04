@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/02 10:03:06 by sdurr             #+#    #+#             */
-/*   Updated: 2015/09/04 12:42:55 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/04 15:36:32 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int		ft_put(char *buf, int cs)
 	tab = ft_strsplit(buf, ' ');
 	if ((ret = open(tab[1], O_RDONLY)) != -1)
 	{
-		send(cs, "ERROR\n", 7, MSG_OOB);
-		send(cs, "", 2, 0);
+		send(cs, "error\n", 7, MSG_OOB);
 		close(ret);
 		return (0);
 	}
+	send(cs, "", 2, 0);
 	if ((ret = open(tab[1], O_RDWR | O_CREAT | O_EXCL, 00777)) != -1)
 	{
 		while ((r = read(cs, buf4, 1023)) > 0)
