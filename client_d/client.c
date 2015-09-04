@@ -6,7 +6,7 @@
 /*   By: karakhirn <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/09 14:21:52 by karakhirn         #+#    #+#             */
-/*   Updated: 2015/09/04 15:38:16 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/04 16:08:07 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,23 @@ static int			test(int sock)
 	return (0);
 }
 
+static void			toto(char *buf, int sock, int r)
+{
+	if (ft_strncmp(buf, "put", 3) == 0)
+	{
+		r = test(sock);
+		if (r > -1)
+		{
+			ft_put(buf, sock);
+			ft_putstr("SUCCESS\n");
+		}
+	}
+	else if (ft_strncmp(buf, "get", 3) == 0)
+		ft_get(buf, sock);
+	else
+		test(sock);
+}
+
 int					main(int ac, char **av)
 {
 	int		sock;
@@ -79,19 +96,7 @@ int					main(int ac, char **av)
 		write(sock, buf, r);
 		if (ft_strcmp(buf, "quit") == 0)
 			break ;
-		if (ft_strncmp(buf, "put", 3) == 0)
-		{
-			r = test(sock);
-			if (r > -1)
-			{
-				ft_put(buf, sock);
-				ft_putstr("SUCCESS\n");
-			}
-		}
-		else if (ft_strncmp(buf, "get", 3) == 0)
-			ft_get(buf, sock);
-		else
-			test(sock);
+		toto(buf, sock, r);
 	}
 	close(sock);
 	return (0);

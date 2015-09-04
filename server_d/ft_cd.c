@@ -6,7 +6,7 @@
 /*   By: sdurr <sdurr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/02 10:18:24 by sdurr             #+#    #+#             */
-/*   Updated: 2015/09/04 15:40:02 by sdurr            ###   ########.fr       */
+/*   Updated: 2015/09/04 15:45:18 by sdurr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void		ft_cd(char *buf, char *pwd, int cs)
 			success = 1;
 		if (ft_strncmp(pwd, getcwd(buf, 1023), ft_strlen(pwd)) != 0)
 		{
-			send(cs, "ERROR you're not allowed for this directory\n", 46, MSG_OOB);
+			send(cs, "ERROR Directory not allowed\n", 29, MSG_OOB);
 			chdir(pwd);
 		}
 		else if (success == 1)
